@@ -8,7 +8,8 @@ import HomeScreen from './HomeScreen';
 
 class Login extends Component {
     constructor(props){
-      super(props);
+      var homeScreen = props.HomeScreen;
+      super(props);      
       this.state={
       username:'',
       password:''
@@ -16,12 +17,9 @@ class Login extends Component {
      }
     render() {
         return (
-          <div>
+          <div style={style}>
             <MuiThemeProvider>
-              <div>
-              <AppBar
-                 title="Login"
-               />
+              <div>              
                <TextField
                  hintText="Enter your Username"
                  floatingLabelText="Username"
@@ -37,10 +35,7 @@ class Login extends Component {
                  <br/>
                  <BrowserRouter>
                  <div>
-                 <Link to="./HomeScreen">Confirmar</Link>
-                 <Switch>
-                  <Route path="/HomeScreen" component={HomeScreen} exact={true}/>
-                </Switch>
+                    <Link to="./HomeScreen">Confirmar</Link>                 
                  </div>
                  </BrowserRouter>
              </div>
@@ -50,6 +45,6 @@ class Login extends Component {
       }
 }
 const style = {
-    margin: 15,
-  };
+  textAlign: 'center',
+};
 export default Login;
